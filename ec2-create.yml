@@ -1,0 +1,15 @@
+Parameters:
+  InstanceName:
+    Type: String
+    Default: cloud-window-cf
+    Description: Name tag for your new EC2 instance
+
+Resources:
+  SimpleEC2Instance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      InstanceType: t3.micro
+      ImageId: ami-0d188df7cedce7d90
+      Tags:
+        - Key: Name
+          Value: !Ref InstanceName
